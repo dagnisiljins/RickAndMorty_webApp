@@ -56,7 +56,7 @@ section div,
     display: flex;
     justify-content: left;
     background-color: white;
-    width: 500px;
+    width: 900px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -85,4 +85,29 @@ footer {
     color: white;
     font-size: 12px;
     height: 40px;
+}
+
+/* Add CSS for character containers and columns */
+.character-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust as needed */
+}
+
+.character {
+    width: 40%; /* Adjust the width for three columns */
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.character h3 {
+    font-size: 18px;
+}
+
+.character img {
+    max-width: 30%;
 }

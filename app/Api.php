@@ -37,7 +37,8 @@ class Api
                     $result->id,
                     $result->name,
                     Carbon::parse($result->air_date),
-                    $result->episode
+                    $result->episode,
+                    $result->characters
                 );
             }
 
@@ -61,7 +62,8 @@ class Api
             $result->id,
             $result->name,
             Carbon::parse($result->air_date),
-            $result->episode
+            $result->episode,
+            $result->characters
         );
     }
 

@@ -12,18 +12,21 @@ class Episode
     private string $name;
     private Carbon $airDate;
     private string $episode;
+    private array $characterUrls;
 
     public function __construct(
         int    $id,
         string $name,
         Carbon $airDate,
-        string $episode
+        string $episode,
+        array $characterUrls
     )
     {
         $this->id = $id;
         $this->name = $name;
         $this->airDate = $airDate;
         $this->episode = $episode;
+        $this->characterUrls = $characterUrls;
     }
 
     public function getId(): int
@@ -44,5 +47,13 @@ class Episode
     public function getEpisode(): string
     {
         return $this->episode;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCharacterUrls(): array
+    {
+        return $this->characterUrls;
     }
 }

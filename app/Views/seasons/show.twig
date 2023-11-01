@@ -1,0 +1,12 @@
+{% include 'Partials/head.twig' %}
+{% include 'Partials/navbar.twig' %}
+
+<section>
+    {% for episode in episodes %}
+        <a href="/episode/{{ episode.id }}">
+            <div>{{ episode.name }}</div>
+        </a>
+    {% endfor %}
+</section>
+
+{% include 'Partials/footer.twig' %}

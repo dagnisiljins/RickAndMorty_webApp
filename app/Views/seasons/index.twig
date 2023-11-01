@@ -1,0 +1,17 @@
+{% include 'Partials/head.twig' %}
+{% include 'Partials/navbar.twig' %}
+{% include 'Partials/header.twig' %}
+
+<section>
+
+    {% for season in seasons %}
+
+        <a href="/season/{{ season }}">
+            <div>Season {{ season }}</div>
+        </a>
+
+    {% endfor %}
+
+</section>
+
+{% include 'Partials/footer.twig' %}

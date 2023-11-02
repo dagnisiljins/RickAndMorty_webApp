@@ -27,7 +27,7 @@ class SearchController
             'search/index',
             [
                 'episodes' => $results,
-                'header' => 'Search Results'
+                'header' => 'Search Results for "' . $query . '"'
             ]
         );
     }

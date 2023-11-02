@@ -5,18 +5,18 @@
 <section>
     <p class="episode">{{ episode.episode }} | Name: {{ episode.getName() }} | Air date: {{ episode.airDate.format('Y-m-d') }}</p>
 
-    <h2 class="episode">Characters in this Episode</h2>
+    <p class="episode">Characters in this Episode</p>
 
     <div class="character-container">
         {% for character in characters %}
             <div class="character">
                 <img src="{{ character.image }}" alt="{{ character.name }}">
                 <br>
-                <h3>  {{ character.name }}</h3>
+                <h3>Name:  {{ character.name }}</h3>
             </div>
         {% endfor %}
     </div>
-</section>
 
+</section>
 
 {% include 'Partials/footer.twig' %}

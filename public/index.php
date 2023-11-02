@@ -13,14 +13,12 @@ $twig = new Environment($loader);
 
 $twig->addExtension(new DebugExtension());
 
-$currentDate = new DateTime();
-
 $routeInfo = Router::dispatch();
 
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
-        echo "404 Not Found";
-        // ... 404 Not Found
+        $template = $twig->load('Error/notFound.twig');
+        echo $template->render();
         break;
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
         $allowedMethods = $routeInfo[1];

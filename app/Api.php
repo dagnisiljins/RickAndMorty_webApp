@@ -21,9 +21,9 @@ class Api
         ]);
     }
 
-    public function fetchEpisodes(): array // TODO EpisodeCollection
+    public function fetchEpisodes(): array
     {
-        $episodes = []; // TODO: EpisodeCollection
+        $episodes = [];
 
         $page = 1;
 
@@ -103,5 +103,26 @@ class Api
         }
 
         return $episodes;
+    }
+
+    //Search funkcijai
+
+    public function searchEpisodes(string $query, string $searchParam): array
+    {
+        $episodes = $this->fetchEpisodes();
+        $results = [];
+
+        // Iterate through episodes and find matches
+        foreach ($episodes as $episode) {
+            if ($searchParam === 'name' && stripos($episode->getName(), $query) !== false) {
+                $results[] = $episode;
+            } elseif ($searchParam === 'air_date' && stripos($episode->getAirDate(), $query) !== false) {
+                $results[] = $episode;
+            } elseif ($searchParam === 'episode' && stripos($episode->getEpisode(), $query) !== false) {
+                $results[] = $episode;
+            }
+        }
+
+        return $results;
     }
 }

@@ -51,12 +51,13 @@ section {
 
 }
 
+
 section div,
 .episode {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     background-color: white;
-    width: 900px;
+    width: 1500px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -87,15 +88,15 @@ footer {
     height: 40px;
 }
 
-/* Add CSS for character containers and columns */
+
 .character-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Adjust as needed */
+    justify-content: space-between;
 }
 
 .character {
-    width: 40%; /* Adjust the width for three columns */
+    width: 30%;
     background-color: white;
     padding: 10px;
     margin-bottom: 20px;

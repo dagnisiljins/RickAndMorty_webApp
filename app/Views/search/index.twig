@@ -3,15 +3,11 @@
 {% include 'Partials/header.twig' %}
 
 <section>
-
-    {% for season in seasons %}
-
-        <a href="/season/{{ season }}">
-            <div>Season {{ season }}</div>
+    {% for episode in episodes %}
+        <a href="/episode/{{ episode.id }}">
+            <div>{{ episode.name }}</div>
         </a>
-
     {% endfor %}
-
 </section>
 
 {% include 'Partials/footer.twig' %}

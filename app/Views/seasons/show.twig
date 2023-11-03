@@ -3,12 +3,14 @@
 {% include 'Partials/header.twig' %}
 
 <section>
+    <div class="content">
         {% for episode in episodes %}
         <a href="/episode/{{ episode.id }}">
 
             <p class="episode">{{ episode.name }}</p>
         </a>
     {% endfor %}
+    </div>
 </section>
 
 {% include 'Partials/footer.twig' %}

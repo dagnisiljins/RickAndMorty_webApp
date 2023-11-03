@@ -105,20 +105,18 @@ class Api
         return $episodes;
     }
 
-    //Search funkcijai
 
-    public function searchEpisodes(string $query, string $searchParam): array
+    public function searchEpisodes(string $query): array
     {
         $episodes = $this->fetchEpisodes();
         $results = [];
 
-        // Iterate through episodes and find matches
         foreach ($episodes as $episode) {
-            if ($searchParam === 'name' && stripos($episode->getName(), $query) !== false) {
-                $results[] = $episode;
-            } elseif ($searchParam === 'air_date' && stripos($episode->getAirDate(), $query) !== false) {
-                $results[] = $episode;
-            } elseif ($searchParam === 'episode' && stripos($episode->getEpisode(), $query) !== false) {
+            if (
+                stripos($episode->getName(), $query) !== false ||
+                stripos($episode->getEpisode(), $query) !== false ||
+                stripos($episode->getAirDate()->format('Y-m-d'), $query) !== false
+            ) {
                 $results[] = $episode;
             }
         }

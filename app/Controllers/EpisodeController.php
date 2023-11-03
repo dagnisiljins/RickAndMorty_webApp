@@ -37,6 +37,7 @@ class EpisodeController
 
 
         return new Response('episodes/show', [
+            'header' => $episode->getName(),
             'episode' => $episode,
             'characters' => $characters
         ]);

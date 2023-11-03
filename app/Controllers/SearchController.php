@@ -19,15 +19,14 @@ class SearchController
     public function search(): Response
     {
         $query = $_GET['q'] ?? '';
-        $searchParam = $_GET['search_param'] ?? 'name';
 
-        $results = $this->api->searchEpisodes($query, $searchParam);
+        $results = $this->api->searchEpisodes($query);
 //dump($results);die;
         return new Response(
             'search/index',
             [
                 'episodes' => $results,
-                'header' => 'Search Results for "' . $query . '"'
+                'header' => 'Search Results for: "' . $query . '"'
             ]
         );
     }

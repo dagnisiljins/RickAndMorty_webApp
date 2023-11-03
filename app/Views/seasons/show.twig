@@ -1,10 +1,12 @@
 {% include 'Partials/head.twig' %}
 {% include 'Partials/navbar.twig' %}
+{% include 'Partials/header.twig' %}
 
 <section>
-    {% for episode in episodes %}
+        {% for episode in episodes %}
         <a href="/episode/{{ episode.id }}">
-            <div>{{ episode.name }}</div>
+
+            <p class="episode">{{ episode.name }}</p>
         </a>
     {% endfor %}
 </section>

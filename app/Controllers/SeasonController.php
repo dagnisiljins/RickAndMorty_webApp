@@ -33,7 +33,7 @@ class SeasonController
             'seasons/show',
             [
                 'episodes' =>  $this->api->fetchEpisodesBySeasonId($id),
-                'header' => 'All Seasons'
+                'header' => 'All Episodes in Season ' . $id
             ]
         );
     }

@@ -12,7 +12,6 @@ body {
     min-height: 100%
 }
 
-/* Content container */
 .content {
     flex: 1;
 }

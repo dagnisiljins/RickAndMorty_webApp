@@ -3,15 +3,17 @@
 {% include 'Partials/header.twig' %}
 
 <section>
-    {% if episodes is empty %}
-    <p class="episode">No results found!</p>
-    {% else %}
-        {% for episode in episodes %}
-            <a href="/episode/{{ episode.id }}">
-                <div class="episode">{{ episode.name }}</div>
-            </a>
-        {% endfor %}
-    {% endif %}
+    <div class="content">
+        {% if episodes is empty %}
+        <p class="episode">No results found!</p>
+        {% else %}
+            {% for episode in episodes %}
+                <a href="/episode/{{ episode.id }}">
+                    <div class="episode">{{ episode.name }}</div>
+                </a>
+            {% endfor %}
+        {% endif %}
+    </div>
 </section>
 
 {% include 'Partials/footer.twig' %}

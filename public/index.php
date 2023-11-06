@@ -5,11 +5,16 @@ use App\Router\Router;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extension\DebugExtension;
+use App\Controllers\WeatherController;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $loader = new FilesystemLoader(__DIR__ . '/../app/Views');
 $twig = new Environment($loader);
+
+$weatherController = new WeatherController();
+$weatherData = $weatherController->getWeatherData();
+$twig->addGlobal('globalWeather', $weatherData);
 
 $twig->addExtension(new DebugExtension());
 

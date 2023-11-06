@@ -1,0 +1,19 @@
+
+<div>
+    <form method="get" action="/search">
+        <input type="text" name="s" placeholder="Search City">
+        <button type="submit">Search</button>
+    </form>
+    <div>
+        <h2>Default City Weather</h2>
+        <p>{{ globalWeather.defaultWeather.getCityName() }}</p>
+        <p>{{ globalWeather.defaultWeather.getDescription() }}</p>
+        <p>{{ globalWeather.defaultWeather.getTemp() }}</p>
+    </div>
+    <div>
+        <h2>Searched City Weather</h2>
+        <p>{{ globalWeather.searchedWeather.getCityName() }}</p>
+        <p>{{ globalWeather.searchedWeather.getDescription() }}</p>
+        <p>{{ globalWeather.searchedWeather.getTemp() }}</p>
+    </div>
+</div>

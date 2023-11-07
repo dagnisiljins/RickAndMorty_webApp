@@ -6,8 +6,12 @@ use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 use Twig\Extension\DebugExtension;
 use App\Controllers\WeatherController;
+use Dotenv\Dotenv;
 
 require_once __DIR__ . '/../vendor/autoload.php';
+
+$dotenv = Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv->load();
 
 $loader = new FilesystemLoader(__DIR__ . '/../app/Views');
 $twig = new Environment($loader);

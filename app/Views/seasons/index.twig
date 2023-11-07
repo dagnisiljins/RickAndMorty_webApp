@@ -3,16 +3,14 @@
 {% include 'Partials/header.twig' %}
 
 <section>
-    {% include 'Partials/weather.twig' %}
-    <div class="content">
-
-    {% for season in seasons %}
-
-        <a href="/season/{{ season }}">
-            <p class="episode">Season {{ season }}</p>
-        </a>
-
-    {% endfor %}
+    <div class="main">
+        {% for season in seasons %}
+            <a href="/season/{{ season }}" class="season-link">
+                <div class="season-card">
+                    <p class="episode">Season {{ season }}</p>
+                </div>
+            </a>
+        {% endfor %}
     </div>
 </section>
 

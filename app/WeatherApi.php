@@ -22,13 +22,11 @@ class WeatherApi
 
     public function fetchWeatherFromUrl(string $city): CityWeatherData
     {
-        $apiKey = '';//$_ENV['API_KEY'];
+        $apiKey = $_ENV['API_KEY'];
         $weatherUrl = $this->weatherApi . $city . '&appid=' . $apiKey . '&units=metric';
-        //
+
         $response = $this->client->get($weatherUrl);
         $weatherData = json_decode((string)$response->getBody());
-
-        //dump($weatherData);die;
 
         return new CityWeatherData($weatherData->name, $weatherData->weather[0]->description, $weatherData->main->temp);
     }
@@ -37,4 +35,4 @@ class WeatherApi
 
 }
 
-//https://api.openweathermap.org/data/2.5/weather?q=riga&appid=....apiKey
+

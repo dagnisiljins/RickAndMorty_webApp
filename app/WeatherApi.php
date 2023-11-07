@@ -27,8 +27,13 @@ class WeatherApi
 
         $response = $this->client->get($weatherUrl);
         $weatherData = json_decode((string)$response->getBody());
-
-        return new CityWeatherData($weatherData->name, $weatherData->weather[0]->description, $weatherData->main->temp);
+//dump($weatherData); die;
+        return new CityWeatherData(
+            $weatherData->name,
+            $weatherData->weather[0]->description,
+            $weatherData->main->temp,
+            $weatherData->dt
+        );
     }
 
 

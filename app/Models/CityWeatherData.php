@@ -10,12 +10,14 @@ class CityWeatherData
     private string $cityName;
     private string $description;
     private float $temp;
+    private int $time;
 
-    public function __construct(string $cityName, string $description, float $temp)
+    public function __construct(string $cityName, string $description, float $temp, int $time)
     {
         $this->cityName = $cityName;
         $this->description = $description;
         $this->temp = $temp;
+        $this->time = $time;
     }
 
     public function getCityName(): string
@@ -44,4 +46,13 @@ class CityWeatherData
     {
         return 'Temperature: ' . round($this->temp) . '°C';
     }
+
+    public function getTime(): string
+    {
+        $timestamp = $this->time;
+        $date = new \DateTime("@$timestamp");
+        $date->setTimezone(new \DateTimeZone('Europe/Riga'));
+        return $date->format('Y-m-d | H:i:s');
+    }
+
 }

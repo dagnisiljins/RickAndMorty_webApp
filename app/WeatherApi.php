@@ -23,7 +23,7 @@ class WeatherApi
     public function fetchWeatherFromUrl(string $city): CityWeatherData
     {
         $apiKey = '';//$_ENV['API_KEY'];
-        $weatherUrl = $this->weatherApi . $city . '&appid=' . $apiKey;
+        $weatherUrl = $this->weatherApi . $city . '&appid=' . $apiKey . '&units=metric';
         //
         $response = $this->client->get($weatherUrl);
         $weatherData = json_decode((string)$response->getBody());

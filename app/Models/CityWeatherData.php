@@ -20,16 +20,28 @@ class CityWeatherData
 
     public function getCityName(): string
     {
-        return $this->cityName;
+        return 'Weather in ' . $this->cityName;
     }
 
     public function getDescription(): string
     {
-        return $this->description;
+        $descriptionToSymbol = [
+            'clear sky' => '☀️',
+            'few clouds' => '🌤',
+            'scattered clouds' => '🌥',
+            'broken clouds' => '☁️',
+            'overcast clouds' => '🌦',
+            'shower rain' => '🌧',
+            'rain' => '🌧',
+            'light rain' => '🌧',
+            'moderate rain' => '🌧'
+        ];
+
+        return $descriptionToSymbol[$this->description] ?? $this->description;
     }
 
-    public function getTemp(): float
+    public function getTemp(): string
     {
-        return $this->temp;
+        return 'Temperature: ' . round($this->temp) . '°C';
     }
 }

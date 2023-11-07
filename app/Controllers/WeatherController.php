@@ -15,7 +15,7 @@ class WeatherController
     public function __construct()
     {
         $this->api = new WeatherApi();
-        $this->defaultCity = 'Riga'; // Set the default city here or load it from a config
+        $this->defaultCity = 'Riga';
         $this->searchedCity = $_GET['s'] ?? '';
     }
 
@@ -23,11 +23,10 @@ class WeatherController
     {
         $defaultWeather = $this->api->fetchWeatherFromUrl($this->defaultCity);
 
-        $searchedCity = $_GET['s'] ?? ''; // Get the search city from the query parameter.
-        $searchedWeather = null; // Initialize the searchedWeather variable.
+        $searchedCity = $_GET['s'] ?? '';
+        $searchedWeather = null;
 
         if (!empty($searchedCity)) {
-            // If a search city is provided, fetch the weather data.
             $searchedWeather = $this->api->fetchWeatherFromUrl($searchedCity);
         }
 
@@ -37,8 +36,3 @@ class WeatherController
         ];
     }
 }
-
-/*$collection = new CitiesWeatherData();
-
-        $collection->add($DefaultWeatherResults);
-        $collection->add($SearchWeatherResults);*/
